@@ -29,7 +29,7 @@ while not 3 <= n <= 50:
 ratio = 0
 while not 0 < ratio < 1:
     try:
-        ratio = float(input('Enter ratio (0 < r < 1): '))
+        ratio = 1 - float(input('Enter ratio (0 < r < 1): '))
     except ValueError:
         continue
 
@@ -42,7 +42,7 @@ r = 500
 while m <= n:
     vt = np.rint(np.array([-r*np.cos(2*np.pi*m/n), r*np.sin(2*np.pi*m/n)]))
     vertices[m-1] = vt
-    m += 1   
+    m += 1    
 
 # Convert vertex vectors to points which the graphics library can understand, also store in a list for later
 i = 0
@@ -111,13 +111,15 @@ while True:
         break
             
     # Pick a random vertex to work with, and for n > 3 make sure the same one can't be chosen twice in a row (this would give boring results)
-    if n == 3:
-        vtx = randint(1,n)
-    else:
-        vtx = randint(1,n)    
-        while vtx == last:
-            vtx = randint(1,n)
-        last = vtx       
+    # if n == 3:
+    #     vtx = randint(1,n)
+    # else:
+    #     vtx = randint(1,n)    
+    #     while vtx == last:
+    #         vtx = randint(1,n)
+    #     last = vtx 
+    vtx = randint(1,n)
+
     vtxvec = plist[vtx-1]
 
     # Calculate point between previous point and vertex and draw it, ad nauseum
