@@ -1,5 +1,5 @@
 # chaos-game
-Fractal generator based on a chaos game inside regular polygons. Uses John Zelle's graphics.py module - see https://inst.eecs.berkeley.edu/~cs61a/book/examples/parallel/graphics.py.html.
+Fractal generator based on a chaos game inside regular polygons. REQUIRES John Zelle's graphics.py module - for download and information see https://mcsp.wartburg.edu/zelle/python/. Put both .py files in the same directory.
 
 Run chaos-game to see results. Press Q while running to quit. For information on the game itself see https://en.wikipedia.org/wiki/Chaos_game.
 
