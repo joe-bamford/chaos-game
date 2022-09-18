@@ -21,7 +21,7 @@ print('Fractal generator by bamjoe. Press Q at any time to exit.')
 n = 0
 while not 3 <= n <= 50:
     try:
-        n = int(input('Enter # of sides for border shape (integer between 3 and 50): '))
+        n = int(input('Enter # of sides for border shape (integer, 3 <= n <= 50): '))
     except ValueError:
         continue
                   
@@ -30,6 +30,14 @@ ratio = 0
 while not 0 < ratio < 1:
     try:
         ratio = 1 - float(input('Enter ratio (0 < r < 1): '))
+    except ValueError:
+        continue
+    
+# Choose whether to disable the same-vertex rule.
+vrule = ''
+while not (vrule == 'y' or vrule == 'n' or vrule == 'Y' or vrule == 'N'):
+    try:
+        vrule = str(input('Enable vertex rule? (y/n): '))
     except ValueError:
         continue
 
@@ -71,12 +79,10 @@ while a == 0:
     
     if initcmod <= r1:
         a = 1
-        print('Attempt',tick,'successful, proceeding...')
-        # print('initpmod = ',initpmod,'; r1 = ',r1,'; phi = ',np.rad2deg(phi))
+        print('\nAttempt',tick,'successful, proceeding...')
     else:
         a = 0
-        print('Attempt',tick,'failed, regenerating...')
-        # print('initpmod = ',initpmod,'; r1 = ',r1,'; phi = ',np.rad2deg(phi))
+        print('\nAttempt',tick,'failed, regenerating...')
         tick += 1
 
 #%% SET UP DRAWING
@@ -109,17 +115,20 @@ while True:
     if kb.is_pressed('q'):
         print('\nExiting')
         break
-            
-    # Pick a random vertex to work with, and for n > 3 make sure the same one can't be chosen twice in a row (this would give boring results)
-    # if n == 3:
-    #     vtx = randint(1,n)
-    # else:
-    #     vtx = randint(1,n)    
-    #     while vtx == last:
-    #         vtx = randint(1,n)
-    #     last = vtx 
-    vtx = randint(1,n)
-
+     
+    if vrule == 'y' or vrule == 'Y':
+        # Pick a random vertex to work with, and for n > 3 make sure the same
+        # one can't be chosen twice in a row
+        if n == 3:
+            vtx = randint(1,n)
+        else:
+            vtx = randint(1,n)
+            while vtx == last:
+                vtx = randint(1,n)
+            last = vtx
+    else:
+        # Allow any vertex to be chosen
+        vtx = randint(1,n)
     vtxvec = plist[vtx-1]
 
     # Calculate point between previous point and vertex and draw it, ad nauseum
