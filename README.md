@@ -3,9 +3,10 @@ Fractal generator based on a chaos game inside regular polygons. REQUIRES John Z
 
 Run chaos-game to see results. Press Q while running to quit. For information on the game itself see https://en.wikipedia.org/wiki/Chaos_game.
 
-Inputs: (1) Number of sides, n, determines the border polygon
-        (2) Ratio, r, determines how far towards each vertex to travel with each iteration
-        (3) Enabling the vertex rule (VR) ensures the same vertex can't be chosen twice in a row
+Inputs: 
+- (1) Number of sides, n, determines the border polygon
+- (2) Ratio, r, determines how far towards each vertex to travel with each iteration
+- (3) Enabling the vertex rule (VR) ensures the same vertex can't be chosen twice in a row
 
 Example inputs: 
 - (1) n=3, r=0.5 gives a Sierpinski triangle
