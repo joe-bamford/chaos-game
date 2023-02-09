@@ -127,7 +127,6 @@ def iterate(n, ratio, vrule, initp, plist, win):
     win.close()
 
 #%% EXECUTE
-#%% EXECUTE
 
 if __name__ == '__main__':
     
@@ -154,9 +153,6 @@ if __name__ == '__main__':
     pt = Point(initp[0],initp[1])
     pt.setOutline(color_rgb(255,0,0))
     pt.draw(win)
-
-    # ln = Line(Point(500,500),pt)
-    # ln.setOutline(color_rgb(255,0,255))
-    # ln.draw(win)
     
+    # Initiate loop
     iterate(n, ratio, vrule, initp, plist, win)
