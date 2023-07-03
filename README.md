@@ -9,10 +9,10 @@ Fractal generator based on a chaos game inside regular polygons.
 # Inputs 
 - Number of sides, n, determines the border polygon
 - Ratio, r, determines how far towards each vertex to travel with each iteration
-- Enabling the vertex rule (VR) ensures the same vertex can't be chosen twice in a row
+- Enabling the vertex rule ensures the same vertex can't be chosen twice in a row
 
 # Example inputs 
 - n=3, r=0.5 gives a Sierpinski triangle
-- n=4, r=0.5 gives a square fractal, with VR enabled
-- n=5, r=0.618034 (reciprocal of golden ratio) gives a pentaflake, with VR disabled
-- n=5, r=0.55 with VR enabled is my personal favourite
+- n=4, r=0.5 gives a square fractal, with the vertex rule enabled
+- n=5, r=0.618034 (reciprocal of golden ratio) gives a pentaflake, with the vertex rule disabled
+- n=5, r=0.55 with the vertex rule enabled is my personal favourite
